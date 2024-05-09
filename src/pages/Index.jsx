@@ -3,9 +3,9 @@ import { ChakraProvider, Box, VStack, Button, Text, Input, Heading, Container, S
 import { FaShoppingCart, FaUserShield, FaSignInAlt } from "react-icons/fa";
 
 const products = [
-  { id: 1, name: "Laptop", price: 999, image: 'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1MDcxMzJ8MHwxfHNlYXJjaHwxfHxsYXB0b3B8ZW58MHx8fHwxNzE1MjUwMzI0fDA&ixlib=rb-4.0.3&q=80&w=1080' },
-  { id: 2, name: "Smartphone", price: 699, image: 'https://images.unsplash.com/photo-1592890288564-76628a30a657?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1MDcxMzJ8MHwxfHNlYXJjaHwxfHxzbWFydHBob25lfGVufDB8fHx8MTcxNTI1MDMyNXww&ixlib=rb-4.0.3&q=80&w=1080' },
-  { id: 3, name: "Headphones", price: 199, image: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1MDcxMzJ8MHwxfHNlYXJjaHwxfHxoZWFkcGhvbmVzfGVufDB8fHx8MTcxNTI1MDMyNXww&ixlib=rb-4.0.3&q=80&w=1080' },
+  { id: 1, name: "Laptop", price: 999, image: "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1MDcxMzJ8MHwxfHNlYXJjaHwxfHxsYXB0b3B8ZW58MHx8fHwxNzE1MjUwMzI0fDA&ixlib=rb-4.0.3&q=80&w=1080" },
+  { id: 2, name: "Smartphone", price: 699, image: "https://images.unsplash.com/photo-1592890288564-76628a30a657?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1MDcxMzJ8MHwxfHNlYXJjaHwxfHxzbWFydHBob25lfGVufDB8fHx8MTcxNTI1MDMyNXww&ixlib=rb-4.0.3&q=80&w=1080" },
+  { id: 3, name: "Headphones", price: 199, image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1MDcxMzJ8MHwxfHNlYXJjaHwxfHxoZWFkcGhvbmVzfGVufDB8fHx8MTcxNTI1MDMyNXww&ixlib=rb-4.0.3&q=80&w=1080" },
 ];
 
 const users = [
@@ -68,14 +68,16 @@ const Index = () => {
               )}
             </Box>
           ) : (
-            <Box>
-              <Heading>Login</Heading>
-              <Input placeholder="Username" value={username} onChange={(e) => setUsername(e.target.value)} />
-              <Input placeholder="Password" type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
-              <Button leftIcon={<FaUserShield />} onClick={handleLogin} mt={3}>
-                Login
-              </Button>
-            </Box>
+            <Flex height="100vh" alignItems="center" justifyContent="center">
+              <Box p={5} shadow="md" borderWidth="1px" borderRadius="md">
+                <Heading>Login</Heading>
+                <Input placeholder="Username" value={username} onChange={(e) => setUsername(e.target.value)} />
+                <Input placeholder="Password" type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+                <Button leftIcon={<FaUserShield />} onClick={handleLogin} mt={3}>
+                  Login
+                </Button>
+              </Box>
+            </Flex>
           )}
         </VStack>
       </Container>
